@@ -1,5 +1,8 @@
 import { useState } from "react";
 
+const ROLL_DURATION = 600; // ms the "tumbling" lasts
+const FLICKER_SPEED = 80; // ms between each fake roll
+
 export function useDice() {
   const [die1, setDie1] = useState(1);
   const [die2, setDie2] = useState(1);

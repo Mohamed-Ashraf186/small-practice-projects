@@ -8,8 +8,8 @@ function App() {
   return (
     <div className="app py-15 flex flex-col gap-10">
       <div className="flex gap-20 justify-center">
-        <Die roll={die1} />
-        <Die roll={die2} />
+        <Die value={die1} />
+        <Die value={die2} />
       </div>
       <RollDice onRollDice={handleRollDice} />
     </div>
