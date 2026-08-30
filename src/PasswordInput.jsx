@@ -1,8 +1,7 @@
 import { Eye } from "lucide-react";
 import { EyeOff } from "lucide-react";
 import { useState } from "react";
-export default function PasswordInput() {
-  const [password, setPassword] = useState("");
+export default function PasswordInput({ password, setPassword }) {
   const [eyeOpen, setEyeOpen] = useState(false);
   return (
     <div className="flex flex-col items-start mt-6 gap-2">
