@@ -4,6 +4,7 @@ import PasswordInput from "./PasswordInput";
 
 function App() {
   const [password, setPassword] = useState("");
+  const [touched, setTouched] = useState(false);
 
   const rules = {
     length: /^.{8,}$/.test(password),
@@ -15,8 +16,12 @@ function App() {
   return (
     <div className="mx-auto">
       <div className="max-w-150 border border-gray-600 px-10 py-5 rounded-2xl">
-        <PasswordInput password={password} setPassword={setPassword} />
-        <CheckList rules={rules} />
+        <PasswordInput
+          password={password}
+          setPassword={setPassword}
+          setTouched={setTouched}
+        />
+        <CheckList rules={rules} touched={touched} />
       </div>
     </div>
   );
