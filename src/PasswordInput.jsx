@@ -1,7 +1,12 @@
 import { Eye } from "lucide-react";
 import { EyeOff } from "lucide-react";
 import { useState } from "react";
-export default function PasswordInput({ password, setPassword, setTouched }) {
+export default function PasswordInput({
+  password,
+  setPassword,
+  setTouched,
+  touched,
+}) {
   const [eyeOpen, setEyeOpen] = useState(false);
   return (
     <div className="flex flex-col items-start mt-6 gap-2">
@@ -14,9 +19,12 @@ export default function PasswordInput({ password, setPassword, setTouched }) {
           placeholder="Enter a password"
           className="outline-none focus:outline-none focus:ring-0"
           value={password}
-          onChange={(e) => setPassword(e.target.value)}
-          onBlur={() => setTouched(true)}
+          onChange={(e) => {
+            setPassword(e.target.value);
+            setTouched(true);
+          }}
         />
+
         <button
           type="button"
           className="cursor-pointer"
