@@ -6,12 +6,12 @@ import WeatherResult from "./WeatherResult";
 // const Base_URL = "http://api.weatherapi.com/v1";
 
 function App() {
-  // const [weather, setWeather] = useState(null);
+  const [weather, setWeather] = useState([]);
 
   return (
     <div className="flex flex-col items-center gap-6 ">
-      <CitySearch />
-      <WeatherResult />
+      <CitySearch results={weather} setResults={setWeather} />
+      <WeatherResult weather={weather} />
     </div>
   );
 }
